@@ -1,12 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #141414;
+      margin: 0;
+      height: 100vh;
+      background-image: url('https://img5.pic.in.th/file/secure-sv1/6025810.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .Boxnotification-pos {
+      position: fixed;  
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      pointer-events: none; 
+    }
+    .Boxnotification {
+      width: 430px; 
+      
+      border-radius: 10px;
+      backdrop-filter: blur(6px);
+      background: #ffffff30;
+      border: 3px solid #ffffffb5;
+      color: #ffffff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      animation: popUp 0.4s ease;
+      pointer-events: auto; /* ทำให้กดปุ่ม X ได้ */
+    }
+    .notification-MenuKeyText {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+      height: 35px;
+      border-bottom: 1px solid #eee;
+    }
+    .notification-MenuKeyText h2 {
+      margin: 0;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
   
-    </head>
-
-    <body>
- fwafawfawf
-    </body>
-</html>
+    .notification-MenuKeyText a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: bold;
+      background-color: #0167ffae;
+      border: 2px solid #ffffff;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
  
+
+
+.notification-MenuKeyText a:hover {
+    background: #83aeeeae;
+    border: 3px solid #ffffffa4;
+       box-shadow: 0 0px 10px rgb(255, 255, 255);
+  transition: transform 0.3s ease, box-shadow 0.3s ease
+  , background-color 0.3s ease;
+
+  }
+
+
+    .Boxnotification h2 {
+      text-align: center;
+      color: #ffffff;
+      margin: 20px 0;
+      font-size: 22px;
+     }
+
+     @keyframes popUp {
+      0% { transform: scale(0.6); opacity: 0; }
+      80% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+    @keyframes shake {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-10deg); }
+      75% { transform: rotate(10deg); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="Boxnotification-pos">
+    <div class="Boxnotification">
+      <div class="notification-MenuKeyText"> 
+        <h2><i class="fa-solid fa-paper-plane"></i> เตือน</h2>
+        <a href="#">X</a>
+      </div>
+      <h2>เติมเงินสำเร็จ</h2>
+    </div>
+  </div>
+</body>
+</html>
