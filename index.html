@@ -1,118 +1,287 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #141414;
-      margin: 0;
-      height: 100vh;
-      background-image: url('https://img5.pic.in.th/file/secure-sv1/6025810.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-    }
-    .Boxnotification-pos {
-      position: fixed;  
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 9999;
-      pointer-events: none; 
-    }
-    .Boxnotification {
-      width: 430px; 
-      
-      border-radius: 10px;
-      backdrop-filter: blur(6px);
-      background: #ffffff30;
-      border: 3px solid #ffffffb5;
-      color: #ffffff;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-      animation: popUp 0.4s ease;
-      pointer-events: auto; /* ทำให้กดปุ่ม X ได้ */
-    }
-    .notification-MenuKeyText {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 8px 12px;
-      height: 35px;
-      border-bottom: 1px solid #eee;
-    }
-    .notification-MenuKeyText h2 {
-      margin: 0;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-  
-    .notification-MenuKeyText a {
-      text-decoration: none;
-      color: #ffffff;
-      font-weight: bold;
-      background-color: #0167ffae;
-      border: 2px solid #ffffff;
-      width: 28px;
-      height: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 5px;
-      transition: 0.3s;
-      cursor: pointer;
-    }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nisachon home V1</title>
+  <link rel="stylesheet" href="ui.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+   <header class="NFDev-header">
+    <button id="menu-open-btn" class="NFDev-Menuicon-btn" aria-label="open menu">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <img class="NFDev-header-img" src="https://img2.pic.in.th/pic/Trend-Logo.png" alt="LogoWeb">
+
+    <a id="OpenBasket" class="NFDev-Menuicon-btn" aria-label="shop">
+      <img src="https://img5.pic.in.th/file/secure-sv1/Shopping-Bag.png" alt="Bag" style="height:28px;">
+    </a>
+  </header>
+
+   <div id="NFDev-menuBox" aria-hidden="true">
+    <button id="menu-close-btn" class="NFDev-Menuicon-btn close-btn" aria-label="close menu">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <nav class="menu-list">
+      <a href="#HOME">HOME</a>
+      <a href="#PRODUCTS">PRODUCTS</a>
+      <a href="#COLLECTION">COLLECTION</a>
+      <a href="#OURSTORY">OURSTORY</a>
+      <a href="#CONTACTUS">CONTACTUS</a>
+
+    </nav>
+  </div>
+
+<div id="NFDevcart" class="NFDevcart">
+  <div class="NFDevcart-header">
+    <span class="NFDevcart-bodyclose" id="closeCart">&times;</span>
+   </div>
+
+  <div class="NFDevcart-body">
+     <div class="NFDevcart-row NFDevcart-row-header">
+         <div><input type="checkbox"></div>
+      <div>สินค้า</div>
+      <div></div> 
+      <div></div>  
+      <div>ราคาต่อชิ้น</div>
+      <div>จำนวน</div>
+      <div>ราคารวม</div>
+    </div>
+
+     <div class="NFDevcart-row">
+      <div><input type="checkbox"></div>
+      <div><img src="./img/image 20.png" alt="สินค้า"></div>
+      <div>
+        <h4>LISQUARE</h4>
+      </div>
+            <div>
+
+         <h4>ตัวเลือกสินค้า : ▼</h4>
+              <p>Cream Color</p>
+
+      </div>
+      <div>฿6,300</div>
+      <div class="NFDevcart-qty">
+        <button>-</button>
+        <input type="text" value="1">
+        <button>+</button>
+      </div>
+      <div class="NFDevcart-total">฿6,300</div>
+    </div>
+
+     <div class="NFDevcart-row">
+      <div><input type="checkbox"></div>
+      <div><img src="./img/image 21.png" alt="สินค้า"></div>
+      <div>
+        <h4>CAIRINN</h4>
+      </div>
+          <div>
+        <h4>ตัวเลือกสินค้า : ▼</h4>
+              <p>Brown Color</p>
+
+      </div>
+
+      <div>฿6,300</div>
+      <div class="NFDevcart-qty">
+        <button class="qty-decrease">−</button>
+        <input type="text" value="3" class="qty-input" inputmode="numeric" pattern="[0-9]*" />
+        <button class="qty-increase">+</button>
+      </div>
+      <div class="NFDevcart-total">฿18,900</div>
+    </div>
+  </div>
+</div>
+
  
 
 
-.notification-MenuKeyText a:hover {
-    background: #83aeeeae;
-    border: 3px solid #ffffffa4;
-       box-shadow: 0 0px 10px rgb(255, 255, 255);
-  transition: transform 0.3s ease, box-shadow 0.3s ease
-  , background-color 0.3s ease;
+ <div class="NFDev_SizeHtml">
+<div class="NF_Dev_Img">
+    <img src="./img/V1.png" alt="Secondslide" />
+    <div class="overlay">
+        <h1 
+        style="
+        font-size: 770%;
+        "
+        >Elevate Your Style</h1>
 
-  }
+        <h2 
+        style="
+        color: #A68A3F;
+        font-size: 720%;
+        "
+        >With Your Own Values</h2>
+        <h2 
+        style="
+        color: #ffffff;
+        font-size: 450%;
+        "
+        >World-class Thai Bag Brand</h2>
 
 
-    .Boxnotification h2 {
-      text-align: center;
-      color: #ffffff;
-      margin: 20px 0;
-      font-size: 22px;
-     }
-
-     @keyframes popUp {
-      0% { transform: scale(0.6); opacity: 0; }
-      80% { transform: scale(1.05); opacity: 1; }
-      100% { transform: scale(1); }
-    }
-    @keyframes shake {
-      0%, 100% { transform: rotate(0deg); }
-      25% { transform: rotate(-10deg); }
-      75% { transform: rotate(10deg); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(15px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
-</head>
-<body>
-  <div class="Boxnotification-pos">
-    <div class="Boxnotification">
-      <div class="notification-MenuKeyText"> 
-        <h2><i class="fa-solid fa-paper-plane"></i> เตือน</h2>
-        <a href="#">X</a>
-      </div>
-      <h2>เติมเงินสำเร็จ</h2>
+        
+        <p st>Made with genuine leather and crafted to global luxury standards)</p>
+        <div class="ExploreCollection">
+            <a href="#Explore Collection" class="btn-primary">Explore Collection</a>
+            <a href="#Our Story" class="btn-secondary">Our Story</a>
+        </div>
     </div>
+        </div>
+
+
+
+
+
+
+
+</div>
+<div class="NFDev_SizeHtml" style="position: relative; padding-top: 30px;">
+    <div class="NF_Dev_Img" style="display: flex; justify-content: center; align-items: center;">
+        <img src="./img/V2.png" alt="Secondslide" style="width: 100%; max-width: 1600px; height: auto; object-fit: cover;">
+            <div class="IMG2-overlay">
+                <div class="BoxText">
+                    <h2>NEOVARA</h2>
+                </div>
+    </div>
+
+    </div>
+</div>
+<div class="NFDev_SizeHtml" style="position: relative; padding-top: 0px;">
+    <div class="NF_Dev_Img" style="display: flex; justify-content: center; align-items: center;">
+        <img src="./img/V3.png" alt="Secondslide" style="width: 100%; max-width: 1600px; height: auto; object-fit: cover;">
+        
+    </div>
+</div>
+
+<div class="NFDev_SizeHtml" style="position: relative; padding-top: 30px;">
+    <div class="NF_Dev_Img" style="display: flex; justify-content: center; align-items: center;">
+        <img src="./img/V4.png" alt="Secondslide" style="width: 100%; max-width: 1600px; height: auto; object-fit: cover;">
+            <div class="IMG2-overlay">
+                <div class="BoxText">
+                    <h2>CHROMAVIA</h2>
+                </div>
+    </div>
+
+    </div>
+</div>
+<div class="NFDev_SizeHtml" style="position: relative; padding-top: 0px;">
+    <div class="NF_Dev_Img" style="display: flex; justify-content: center; align-items: center;">
+        <img src="./img/V5.png" alt="Secondslide" style="width: 100%; max-width: 1600px; height: auto; object-fit: cover;">
+        
+    </div>
+</div>
+
+<div class="NFDev_SizeHtml" style="position: relative; padding-top: 30px;">
+    <div class="NF_Dev_Img" style="display: flex; justify-content: center; align-items: center;">
+        <img src="./img/V6.png" alt="Secondslide" style="width: 100%; max-width: 1600px; height: auto; object-fit: cover;">
+            <div class="IMG2-overlay">
+                <div class="BoxText">
+                    <h2>LYSTORIA</h2>
+                </div>
+    </div>
+
+    </div>
+</div>
+<div class="NFDev_SizeHtml" style="position: relative; padding-top: 0px;">
+    <div class="NF_Dev_Img" style="display: flex; justify-content: center; align-items: center;">
+        <img src="./img/V7.png" alt="Secondslide" style="width: 100%; max-width: 1600px; height: auto; object-fit: cover;">
+        
+    </div>
+</div>
+
+
+<div class="NFDev_SizeHtml" style="position: relative; padding-top: 30px;">
+    <div class="NF_Dev_Img" style="display: flex; justify-content: center; align-items: center;">
+        <img src="./img/V8.png" alt="Secondslide" style="width: 100%; max-width: 1600px; height: auto; object-fit: cover;">
+            <div class="IMG2-overlay">
+                <div class="BoxText">
+                    <h2>Coming Soon...</h2>
+                </div>
+    </div>
+
+    </div>
+</div>
+<div class="NFDev_SizeHtml" style="position: relative; padding-top: 30px;">
+
+ 
+<div class="RecommendedProducts-wrap">
+
+   <div class="RecommendedProducts-left">
+    <h1 class="RecommendedProducts-title">
+      A Special Package<br>
+      for <span class="RecommendedProducts-highlight">Every Detail</span>
+    </h1>
+
+    <p class="RecommendedProducts-text"
+    style="position: relative; padding-top: 130px; width: 100%;
+    "
+    >
+      Exquisite and refined, each package transforms the simple act of unboxing into a moment to savor,
+      where every detail is thoughtfully considered.
+    </p>
+
+    <div class="RecommendedProducts-gallery">
+      <div class="img RecommendedProducts-img-a"><img src="./img/RecommendedProducts_3.png" alt=""></div>
+      <div class="img RecommendedProducts-img-b"><img src="./img/RecommendedProducts_2.png" alt=""></div>
+      <div class="img RecommendedProducts-img-c"><img src="./img/RecommendedProducts_4.png" alt=""></div>
+    </div>
+
+
   </div>
+
+   <div class="RecommendedProducts-right">
+    <img src="./img/RecommendedProducts_1.png" alt="hero bag">
+  </div>
+</div>
+<div style="display: flex; justify-content: center;   margin: 30px auto 0;    ">
+  <button class="RecommendedProducts-btn">SHOP NOW</button>
+</div>
+</div>
+
+<footer class="NFDevfooter">
+    <div>
+    <div class="NFDev-DistributionBrand space-x-4">
+        <h2>Shipping & Returns</h2>
+            <h2>Terms & Conditions</h2>
+            <h2>Contact Us </h2>
+    </div>
+<div class="NFDevfooter-search">
+  <i class="fa-solid fa-magnifying-glass NFDevfooter-search-icon"></i>
+  <input type="text" placeholder="Search">
+</div>
+
+
+  <p class="NFDevfooter-text">
+    Trendluxuryinternational.Co.,Ltd
+  </p>
+
+  <div class="NFDevfooter-socials">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-tiktok"></i></a>
+    <a href="#"><i class="fas fa-shopping-bag"></i></a>
+  </div>
+
+
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="app.js"></script>
+
+
 </body>
 </html>
