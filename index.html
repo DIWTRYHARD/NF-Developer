@@ -9,6 +9,7 @@
 </head>
 <body>
 
+    <!-- header ส่วนของเมนูด้านบน -->
    <header class="NFDev-header">
     <button id="menu-open-btn" class="NFDev-Menuicon-btn" aria-label="open menu">
       <i class="fas fa-bars"></i>
@@ -20,6 +21,9 @@
       <img src="https://img5.pic.in.th/file/secure-sv1/Shopping-Bag.png" alt="Bag" style="height:28px;">
     </a>
   </header>
+    <!-- header สิ้นสุด -->
+
+    <!-- ส่วนของเมนูด้านซ่ายที่ไปหน้าต่างๆของเว็บ -->
 
    <div id="NFDev-menuBox" aria-hidden="true">
     <button id="menu-close-btn" class="NFDev-Menuicon-btn close-btn" aria-label="close menu">
@@ -35,6 +39,10 @@
 
     </nav>
   </div>
+    <!-- สิ้นสุด -->
+
+
+        <!-- เมนูตะกล้าสินค้า -->
 
 <div id="NFDevcart" class="NFDevcart">
   <div class="NFDevcart-header">
@@ -52,6 +60,8 @@
       <div>ราคารวม</div>
     </div>
 
+        <!-- ตารางสินค้าถ้าขะให้ทำเป็น Js บอกได้ -->
+
      <div class="NFDevcart-row">
       <div><input type="checkbox"></div>
       <div><img src="./img/image 20.png" alt="สินค้า"></div>
@@ -66,12 +76,13 @@
       </div>
       <div>฿6,300</div>
       <div class="NFDevcart-qty">
-        <button>-</button>
-        <input type="text" value="1">
-        <button>+</button>
+        <button class="qty-decrease">−</button>
+        <input type="text" value="3" class="qty-input" inputmode="numeric" pattern="[0-9]*" />
+        <button class="qty-increase">+</button>
       </div>
       <div class="NFDevcart-total">฿6,300</div>
     </div>
+        <!-- ตารางสินค้าถ้าขะให้ทำเป็น Js บอกได้ -->
 
      <div class="NFDevcart-row">
       <div><input type="checkbox"></div>
@@ -93,10 +104,14 @@
       </div>
       <div class="NFDevcart-total">฿18,900</div>
     </div>
+
+        <!-- สิ้นสุดของในตะกล้า -->
+
   </div>
 </div>
 
- 
+         <!--สิ้นสุด เมนูตะกล้าสินค้า -->
+
 
 
  <div class="NFDev_SizeHtml">
